@@ -1,0 +1,11 @@
+h1 = @blog_post.title
+
+p By #{@blog_post.author}
+
+p = @blog_post.created_at.strftime('%b %d, %Y')
+
+p = @blog_post.tags
+
+p = @blog_post.location
+
+= @content
