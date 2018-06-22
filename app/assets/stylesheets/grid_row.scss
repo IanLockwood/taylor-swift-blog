@@ -1,0 +1,179 @@
+.grid-row {
+  margin: 0 5px;
+  width: calc(100% - 10px);
+
+  @media (min-width: 800px) {
+    margin: 0 70px;
+    width: calc(100% - 140px)
+  }
+
+  &:after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+[class*='col-'] {
+  float: left;
+}
+
+.col-1-mobile {
+  width: 12.5%;
+}
+
+.col-2-mobile {
+  width: 25%;
+}
+
+.col-3-mobile {
+  width: 37.5%;
+}
+
+.col-4-mobile {
+  width: 50%;
+}
+
+.col-5-mobile {
+  width: 62.5%;
+}
+
+.col-6-mobile {
+  width: 75%;
+}
+
+.col-7-mobile {
+  width: 87.5%;
+}
+
+.col-8-mobile {
+  width: 100%;
+}
+
+.col-1-desktop {
+  @media (min-width: 800px) {
+    width: 12.5%;
+  }
+}
+
+.col-2-desktop {
+  @media (min-width: 800px) {
+    width: 25%;
+  }
+}
+
+.col-3-desktop {
+  @media (min-width: 800px) {
+    width: 37.5%;
+  }
+}
+
+.col-4-desktop {
+  @media (min-width: 800px) {
+    width: 50%;
+  }
+}
+
+.col-5-desktop {
+  @media (min-width: 800px) {
+    width: 62.5%;
+  }
+}
+
+.col-6-desktop {
+  @media (min-width: 800px) {
+    width: 75%;
+  }
+}
+
+.col-7-desktop {
+  @media (min-width: 800px) {
+    width: 87.5%;
+  }
+}
+
+.col-8-desktop {
+  @media (min-width: 800px) {
+    width: 100%;
+  }
+}
+
+.offset-1-mobile {
+  margin-left: 12.5%;
+}
+
+.offset-2-mobile {
+  margin-left: 25%;
+}
+
+.offset-3-mobile {
+  margin-left: 37.5%;
+}
+
+.offset-4-mobile {
+  margin-left: 50%;
+}
+
+.offset-5-mobile {
+  margin-left: 62.5%;
+}
+
+.offset-6-mobile {
+  margin-left: 75%;
+}
+
+.offset-7-mobile {
+  margin-left: 87.5%;
+}
+
+.offset-8-mobile {
+  margin-left: 100%;
+}
+
+.offset-1-desktop {
+  @media (min-width: 800px) {
+    margin-left: 12.5%;
+  }
+}
+
+.offset-2-desktop {
+  @media (min-width: 800px) {
+    margin-left: 25%;
+  }
+}
+
+.offset-3-desktop {
+  @media (min-width: 800px) {
+    margin-left: 37.5%;
+  }
+}
+
+.offset-4-desktop {
+  @media (min-width: 800px) {
+    margin-left: 50%;
+  }
+}
+
+.offset-5-desktop {
+  @media (min-width: 800px) {
+    margin-left: 62.5%;
+  }
+}
+
+.offset-6-desktop {
+  @media (min-width: 800px) {
+    margin-left: 75%;
+  }
+}
+
+.offset-7-desktop {
+  @media (min-width: 800px) {
+    margin-left: 87.5%;
+  }
+}
+
+.offset-8-desktop {
+  @media (min-width: 800px) {
+    margin-left: 100%;
+  }
+}

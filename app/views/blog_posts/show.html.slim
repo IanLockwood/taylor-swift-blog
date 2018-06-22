@@ -1,11 +1,33 @@
+.grid-row
+  .col-2-mobile.col-1-desktop style="background-color: red;"
+    p hi there!
+  .col-2-mobile.col-1-desktop.offset-2-mobile.offset-1-desktop style="background-color: green;"
+    p hi there!
+  .col-2-mobile.col-1-desktop style="background-color: yellow;"
+    p hi there!
+  .col-2-mobile.col-1-desktop style="background-color: purple;"
+    p hi there!
+  .col-2-mobile.col-1-desktop style="background-color: orange;"
+    p hi there!
+  .col-2-mobile.col-1-desktop style="background-color: pink;"
+    p hi there!
+  .col-2-mobile.col-1-desktop style="background-color: black;"
+    p hi there!
+
 h1 = @blog_post.title
 
-p By #{@blog_post.author}
+.grid-row
+  .col-8-mobile.col-2-desktop.offset-1-desktop
+    p By #{@blog_post.author}
 
-p = @blog_post.created_at.strftime('%b %d, %Y')
+    p = @blog_post.created_at.strftime('%b %d, %Y')
 
-p = @blog_post.tags
+    p
+      - @blog_post.tags.each do |tag|
+        = "#" + tag
+        br
 
-p = @blog_post.location
+  .col-8-mobile.col-5-desktop
+    p = @blog_post.location
 
-= @content
+    = @content

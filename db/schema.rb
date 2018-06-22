@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180621200817) do
+ActiveRecord::Schema.define(version: 20180622153717) do
 
   create_table "blog_posts", force: :cascade do |t|
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "title"
     t.string   "author"
-    t.string   "tags",       default: "--- []\n"
     t.text     "content"
     t.string   "location"
+    t.string   "tags"
   end
 
 end
