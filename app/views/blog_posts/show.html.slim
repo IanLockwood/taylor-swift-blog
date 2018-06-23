@@ -1,33 +1,47 @@
+.grid-row.grid-line-row
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+  .col-1-mobile.grid-lines
+
+.grid-row.nav-row
+  = image_tag "logo_and_hamburger.svg", class: "logo-and-hamburger"
+
+.post-header-container
+  = image_tag "mountains.jpg", class: "post-header-image"
+
+  .post-header-image-cutoff
+
+  .grid-row.post-title-container
+    .col-5-mobile.offset-1-mobile
+      h1.title-anchor
+        .background-mark-container
+          mark.background-mark = @blog_post.title
+        .post-title
+          mark.post-title-span = @blog_post.title
+
 .grid-row
-  .col-2-mobile.col-1-desktop style="background-color: red;"
-    p hi there!
-  .col-2-mobile.col-1-desktop.offset-2-mobile.offset-1-desktop style="background-color: green;"
-    p hi there!
-  .col-2-mobile.col-1-desktop style="background-color: yellow;"
-    p hi there!
-  .col-2-mobile.col-1-desktop style="background-color: purple;"
-    p hi there!
-  .col-2-mobile.col-1-desktop style="background-color: orange;"
-    p hi there!
-  .col-2-mobile.col-1-desktop style="background-color: pink;"
-    p hi there!
-  .col-2-mobile.col-1-desktop style="background-color: black;"
-    p hi there!
+  .post-detail-container.col-8-mobile.col-2-desktop.offset-1-desktop
+    hr
+    .by-prefix By
+    .author-name = " " + @blog_post.author
 
-h1 = @blog_post.title
+    hr
+    p.post-date = @blog_post.created_at.strftime('%b %d, %Y')
 
-.grid-row
-  .col-8-mobile.col-2-desktop.offset-1-desktop
-    p By #{@blog_post.author}
-
-    p = @blog_post.created_at.strftime('%b %d, %Y')
-
-    p
+    hr
+    p.tags
       - @blog_post.tags.each do |tag|
         = "#" + tag
         br
 
-  .col-8-mobile.col-5-desktop
-    p = @blog_post.location
+  .col-8-mobile.col-4-desktop
+    .post-content-container
+      .post-location = @blog_post.location
+      .post-content = @content
 
-    = @content
+footer

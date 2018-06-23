@@ -1,3 +1,62 @@
 body {
   margin: 0;
+  font-family: 'Palatino', serif;
+  line-height: 1.8;
+}
+
+h1,
+h3 {
+  font-family: 'Copernicus', serif;
+}
+
+h1 {
+  font-size: 70px;
+  line-height: normal;
+  margin: 0;
+}
+
+h3 {
+  color: #8a98a6;
+  font-size: 32px;
+  line-height: 1.2;
+  font-family: 'Copernicus';
+}
+
+mark {
+  background-color: white;
+  box-shadow: 20px 0 0 white, -20px 0 0 white;
+}
+
+.nav-row {
+  position: absolute;
+  z-index: 10;
+  top: 30px;
+
+  @media (min-width: 800px) {
+    top: 70px;
+  }
+}
+
+.logo-and-hamburger {
+  width: 200px;
+  float: right;
+}
+
+footer {
+  margin-bottom: 250px;
+}
+
+.grid-line-row {
+  position: absolute;
+  top: 0;
+  height: 3000px;
+  z-index: 100000;
+}
+
+.grid-lines {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  height: 3000px;
+  width: calc(12.5% - 2px);
+  z-index: 100000;
 }

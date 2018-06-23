@@ -1,0 +1,119 @@
+.post-header-image {
+  width: 100%;
+}
+
+.post-header-image-cutoff {
+  width: 100%;
+  background-color: white;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.post-title-container {
+  position: absolute;
+  bottom: 10px;
+}
+
+.post-title {
+  margin-bottom: 0;
+  overflow:hidden;
+  display:inline-block;
+  color:transparent;
+  position: absolute;
+  bottom: 0;
+}
+
+.post-title-span {
+  background: asset-url("mountains.jpg");
+  background-size: 180%;
+  background-repeat: no-repeat;
+  background-position: 38% 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display:block;
+}
+
+.title-anchor {
+  position: relative;
+}
+
+.background-mark {
+  color: white;
+  background-color: white;
+  padding-top: 10px;
+}
+
+.post-detail-container {
+  hr {
+    width: 70%;
+    margin-left: 0;
+    border: none;
+    height: 1px;
+    color: #e5e5e5;
+    background-color: #e5e5e5;
+    margin-top: 22px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.author-name {
+  display: inline;
+  font-family: 'Copernicus';
+  color: #6f4f31;
+}
+
+.by-prefix,
+.post-location {
+  display: inline;
+}
+
+.by-prefix,
+.post-date,
+.tags,
+.post-location {
+  font-family: 'Futura Book', 'Futura', sans-serif;
+  color: #b2b2b2;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.post-content-container {
+  margin-right: -25px;
+}
+
+.post-content {
+  display: inline;
+
+  p {
+    font-size: 19px;
+
+    &:first-of-type {
+      display: inline;
+    }
+  }
+
+  h3 {
+    margin-left: -50px;
+    margin-right: 50px;
+  }
+}
+
+.post-location {
+  color: #808080;
+  font-size: 13px;
+  padding-right: 24px;
+}
+
+.post-header-container {
+  position: relative;
+  margin-bottom: 70px;
+}
