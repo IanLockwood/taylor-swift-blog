@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { StaticTitle } from './StaticTitle';
+import { TitleForm } from './TitleForm';
 
 class EditableTitle extends Component {
   constructor(props) {
@@ -9,12 +10,26 @@ class EditableTitle extends Component {
     this.state = {
       editing: false
     };
+
+    this.editTitle = this.editTitle.bind(this);
+  }
+
+  editTitle() {
+    this.setState({
+      editing: true
+    });
   }
 
   render() {
-    return (
-      <StaticTitle titleName={this.props.titleName} />
-    )
+    if (this.state.editing) {
+      return (
+        <TitleForm />
+      )
+    } else {
+      return (
+        <StaticTitle titleName={this.props.titleName} editTitle={this.editTitle} />
+      )
+    }
   }
 }
 

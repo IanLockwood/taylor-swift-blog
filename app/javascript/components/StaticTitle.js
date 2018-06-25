@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import Pencil from 'images/pencil.svg'
+import Pencil from 'images/pencil.svg';
 
 export class StaticTitle extends Component {
   constructor(props) {
     super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.editTitle();
   }
 
   render() {
     return (
       <div>
-        <div className="pencil-icon-container">
-          <img className="pencil-icon" src={Pencil} />
+        <div className="pencil-icon-container" onClick={this.handleClick}>
+          <img className="editing-icon" src={Pencil} />
         </div>
 
         <h1>

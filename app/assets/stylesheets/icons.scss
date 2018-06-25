@@ -5,10 +5,33 @@
   position: absolute;
   top: -40px;
   left: -50px;
+  cursor: pointer;
 }
 
-.pencil-icon {
+.editing-icon {
   width: 100%;
   padding-top: 4px;
   padding-left: 1px;
+}
+
+.checkmark-icon-container,
+.x-icon-container {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.checkmark-icon-container{
+  background-color: #a2d05a;
+}
+
+.x-icon-container {
+  background-color: #e56d3e;
+  margin-bottom: 1px;
+}
+
+.edit-icons-container {
+  position: absolute;
+  top: -71px;
+  left: -50px;
 }
