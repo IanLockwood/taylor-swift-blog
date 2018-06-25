@@ -45,18 +45,3 @@ mark {
 footer {
   margin-bottom: 250px;
 }
-
-.grid-line-row {
-  position: absolute;
-  top: 0;
-  height: 3000px;
-  z-index: 100000;
-}
-
-.grid-lines {
-  border-left: 1px solid red;
-  border-right: 1px solid red;
-  height: 3000px;
-  width: calc(12.5% - 2px);
-  z-index: 100000;
-}
