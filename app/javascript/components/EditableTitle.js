@@ -12,6 +12,7 @@ class EditableTitle extends Component {
     };
 
     this.editTitle = this.editTitle.bind(this);
+    this.cancelEdit = this.cancelEdit.bind(this);
   }
 
   editTitle() {
@@ -20,10 +21,16 @@ class EditableTitle extends Component {
     });
   }
 
+  cancelEdit() {
+    this.setState({
+      editing: false
+    });
+  }
+
   render() {
     if (this.state.editing) {
       return (
-        <TitleForm />
+        <TitleForm titleName={this.props.titleName} cancelEdit={this.cancelEdit} />
       )
     } else {
       return (

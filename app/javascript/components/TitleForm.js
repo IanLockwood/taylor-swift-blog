@@ -5,13 +5,19 @@ import X from 'images/x.svg';
 export class TitleForm extends Component {
   constructor(props) {
     super(props);
+
+    this.handleCancelClick = this.handleCancelClick.bind(this);
+  }
+
+  handleCancelClick() {
+    this.props.cancelEdit();
   }
 
   render() {
     return (
       <div>
         <div className="edit-icons-container">
-          <div className="x-icon-container">
+          <div className="x-icon-container" onClick={this.handleCancelClick}>
             <img className="editing-icon" src={X} />
           </div>
           <div className="checkmark-icon-container">
@@ -19,14 +25,8 @@ export class TitleForm extends Component {
           </div>
         </div>
 
-        <h1>
-          <div className="background-mark-container">
-            <mark className="background-mark">hoopy doopy</mark>
-          </div>
-          <div className="post-title">
-            <mark className="post-title-span">hoopy doopy</mark>
-          </div>
-        </h1>
+        <span className="post-title-input-background" defaultValue={this.props.titleName}></span>
+        <input className="post-title-input" defaultValue={this.props.titleName}></input>
       </div>
     )
   }
