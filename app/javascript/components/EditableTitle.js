@@ -30,7 +30,7 @@ class EditableTitle extends Component {
   render() {
     if (this.state.editing) {
       return (
-        <TitleForm titleName={this.props.titleName} cancelEdit={this.cancelEdit} />
+        <TitleForm titleName={this.props.titleName} slugName={this.props.slugName} cancelEdit={this.cancelEdit} />
       )
     } else {
       return (

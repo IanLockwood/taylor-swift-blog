@@ -7,10 +7,20 @@ export class TitleForm extends Component {
     super(props);
 
     this.handleCancelClick = this.handleCancelClick.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
   handleCancelClick() {
     this.props.cancelEdit();
+  }
+
+  handleKeyUp(e) {
+    const currentTitle = e.target.value;
+    let newSlug = currentTitle.replace(/[^\w\s]/g,'');
+    newSlug = newSlug.replace(/\s+/g, '-').toLowerCase();
+
+    console.log(newSlug);
+    document.getElementById("liveSlug").innerHTML = newSlug;
   }
 
   render() {
@@ -25,8 +35,13 @@ export class TitleForm extends Component {
           </div>
         </div>
 
-        <span className="post-title-input-background" defaultValue={this.props.titleName}></span>
-        <input className="post-title-input" defaultValue={this.props.titleName}></input>
+        <span className="post-title-input-background"></span>
+        <input className="post-title-input" defaultValue={this.props.titleName} onKeyUp={this.handleKeyUp}></input>
+
+        <div className="live-slug-container">
+          <div className="slug-prefix">slug: </div>
+          <div id="liveSlug" className="live-slug">{this.props.slugName}</div>
+        </div>
       </div>
     )
   }
