@@ -8,11 +8,15 @@
 
   .grid-row.post-title-container
     .col-5-mobile.offset-1-mobile
-      h1.title-anchor
-        .background-mark-container
-          mark.background-mark = @blog_post.title
-        .post-title
-          mark.post-title-span = @blog_post.title
+      .title-anchor
+        .pencil-icon-container
+          = image_tag "pencil.svg", class: "pencil-icon"
+
+        h1
+          .background-mark-container
+            mark.background-mark = @blog_post.title
+          .post-title
+            mark.post-title-span = @blog_post.title
 
 .grid-row
   .post-detail-container.col-8-mobile.col-2-desktop.offset-1-desktop
