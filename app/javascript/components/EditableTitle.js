@@ -16,4 +16,6 @@ class EditableTitle extends Component {
       <StaticTitle titleName={this.props.titleName} />
     )
   }
-};
+}
+
+export default EditableTitle;
