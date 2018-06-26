@@ -8,11 +8,15 @@ class EditableTitle extends Component {
     super(props);
 
     this.state = {
-      editing: false
+      editing: false,
+      postTitle: this.props.blogPost.title,
+      postSlug: this.props.blogPost.slug,
+      postID: this.props.blogPost.id,
     };
 
     this.editTitle = this.editTitle.bind(this);
     this.cancelEdit = this.cancelEdit.bind(this);
+    this.updatePost = this.updatePost.bind(this);
   }
 
   editTitle() {
@@ -27,14 +31,21 @@ class EditableTitle extends Component {
     });
   }
 
+  updatePost(newTitle, newSlug) {
+    this.setState({
+      postTitle: newTitle,
+      postSlug: newSlug
+    });
+  }
+
   render() {
     if (this.state.editing) {
       return (
-        <TitleForm titleName={this.props.titleName} slugName={this.props.slugName} cancelEdit={this.cancelEdit} />
+        <TitleForm titleName={this.state.postTitle} slugName={this.state.postSlug} cancelEdit={this.cancelEdit} updatePost={this.updatePost} postID={this.state.postID} />
       )
     } else {
       return (
-        <StaticTitle titleName={this.props.titleName} editTitle={this.editTitle} />
+        <StaticTitle titleName={this.state.postTitle} editTitle={this.editTitle} />
       )
     }
   }
