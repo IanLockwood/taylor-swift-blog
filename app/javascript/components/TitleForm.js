@@ -15,12 +15,21 @@ export class TitleForm extends Component {
   }
 
   handleKeyUp(e) {
+    let checkmark = document.getElementById("checkmarkID");
+    let liveSlug = document.getElementById("liveSlug");
     const currentTitle = e.target.value;
     let newSlug = currentTitle.replace(/[^\w\s]/g,'');
     newSlug = newSlug.replace(/\s+/g, '-').toLowerCase();
 
-    console.log(newSlug);
-    document.getElementById("liveSlug").innerHTML = newSlug;
+    if (newSlug === '') {
+      checkmark.classList.add("checkmark-icon-container--disabled");
+      liveSlug.classList.add("live-slug--empty");
+      liveSlug.innerHTML = "please enter a post title";
+    } else {
+      checkmark.classList.remove("checkmark-icon-container--disabled");
+      liveSlug.classList.remove("live-slug--empty");
+      liveSlug.innerHTML = newSlug;
+    }
   }
 
   render() {
@@ -30,7 +39,7 @@ export class TitleForm extends Component {
           <div className="x-icon-container" onClick={this.handleCancelClick}>
             <img className="editing-icon" src={X} />
           </div>
-          <div className="checkmark-icon-container">
+          <div id="checkmarkID" className="checkmark-icon-container">
             <img className="editing-icon" src={Checkmark} />
           </div>
         </div>
