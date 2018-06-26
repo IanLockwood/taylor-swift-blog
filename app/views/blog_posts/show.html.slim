@@ -9,7 +9,7 @@
   .grid-row.post-title-container
     .col-5-mobile.offset-1-mobile
       #editable-title
-        = react_component('EditableTitle', {blogPost: @blog_post})
+        = react_component('EditableTitle', {blogPost: @blog_post, blogPostSlugs: @blog_post_slugs})
 
 .grid-row
   .post-detail-container.col-8-mobile.col-2-desktop.offset-1-desktop

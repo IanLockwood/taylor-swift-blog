@@ -15,9 +15,26 @@ export class TitleForm extends Component {
     this.props.cancelEdit();
   }
 
+  addCharactersToSlug() {
+    let charString = "";
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (let i = 0; i < 5; i++)
+      charString += characters.charAt(Math.floor(Math.random() * characters.length));
+
+    return charString;
+  }
+
   getNewSlug(title) {
     let newSlug = title.replace(/[^\w\s]/g,'');
     newSlug = newSlug.replace(/\s+/g, '-').toLowerCase();
+
+    if ((newSlug !== this.props.slugName) && (this.props.usedSlugs.indexOf(newSlug) > -1)) {
+      let charString = this.addCharactersToSlug();
+      newSlug += "-";
+      newSlug += charString;
+    }
+
     return newSlug;
   }
 
