@@ -11,8 +11,10 @@
 }
 
 .post-title-container {
-  position: absolute;
-  bottom: 10px;
+  @media (min-width: 800px) {
+    position: absolute;
+    bottom: 10px;
+  }
 }
 
 .post-title {
