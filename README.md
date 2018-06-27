@@ -36,7 +36,7 @@ P.S. Check out the (humble) mobile styling too!
 
 ### Other
 
-* Currently I'm pinging the database for used/taken slug names only when I AJAX the changes. I considered pinging the database more often to update the list, but decided that checking it so often would be way too heavy. I think in a realistic implementation of this feature, I would have a static list as I do now, and a final database check of the current list of reserved slugs just before updating (using React lifecycle methods), and if the slug is taken, I would throw an error to the user. It wouldn't be a seamless UX experience, but I think it would happen extremely rarely and is the best compromise between efficiency and UX.
+* Currently I'm pinging the database for used/taken slug names only when I AJAX the changes. I considered querying the database more often to update the list, but decided that checking it so often would be way too heavy. I think in a realistic implementation of this feature, I would have a static list as I do now, and a final database check of the current list of reserved slugs just before updating (using React lifecycle methods), and if the slug is taken, I would throw an error to the user. It wouldn't be a seamless UX experience, but I think it would happen extremely rarely and is the best compromise between efficiency and UX.
 
 * I'm wondering if there was a better way to do the see-through text with a white background. Right now it's a bit of a hack, it's a lot of lines of code, and I figured out the positioning by testing it pixel-by-pixel in my browser's dev tools. I'd love to chat about a more minimal implementation.
 
