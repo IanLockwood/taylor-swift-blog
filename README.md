@@ -1,24 +1,26 @@
-# README
+# Set Up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone the app from github
 
-Things you may want to cover:
+* Run `bundle install` in your console to install gems
 
-* Ruby version
+* Run `rake db:setup` in your console to set up the database, run migrations, and populate the app with seed data
 
-* System dependencies
+* Run `rails s` to start the server
 
-* Configuration
+* Navigate to `localhost:3000/blog_posts/are-we-out-of-the-woods-yet` and start playing with titles!
 
-* Database creation
+### Check out the code
 
-* Database initialization
+* React components live in `app/javascript/components`
+* Styling lives in a `app/assets/stylesheets`
+* The view for blogs posts is `app/views/blog_posts/show.html.slim`
+* The controller for blogs posts is `app/controllers/blog_posts_controller.rb`
 
-* How to run the test suite
+# Project Notes
 
-* Services (job queues, cache servers, search engines, etc.)
+### Things that went well
 
-* Deployment instructions
+### Things that need improvement
 
-* ...
+### Other
