@@ -1,3 +1,4 @@
+// Static display component for title
 import React, { Component } from 'react';
 import Pencil from 'images/pencil.svg';
 

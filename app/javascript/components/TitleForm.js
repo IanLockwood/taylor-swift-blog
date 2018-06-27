@@ -15,6 +15,7 @@ export class TitleForm extends Component {
     this.props.cancelEdit();
   }
 
+  // Generates 5 random characters to slug if it's taken
   addCharactersToSlug() {
     let charString = "";
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -29,6 +30,7 @@ export class TitleForm extends Component {
     let newSlug = title.replace(/[^\w\s]/g,'');
     newSlug = newSlug.replace(/\s+/g, '-').toLowerCase();
 
+    // Adds random character string to slug if it's taken
     if ((newSlug !== this.props.slugName) && (this.props.usedSlugs.indexOf(newSlug) > -1)) {
       let charString = this.addCharactersToSlug();
       newSlug += "-";
@@ -45,6 +47,7 @@ export class TitleForm extends Component {
 
     let newSlug = this.getNewSlug(currentTitle);
 
+    // Doesn't allow empty slugs
     if (newSlug === '') {
       checkmark.classList.add("checkmark-icon-container--disabled");
       liveSlug.classList.add("live-slug--empty");
@@ -69,9 +72,9 @@ export class TitleForm extends Component {
         method: "PUT",
         data: {blog_post: {'title': newTitle, 'slug': newSlug} },
         dataType: 'json'
-      }).done( function() {
+      }).done( function(newUsedSlugs) {
         window.history.replaceState({slug: newSlug}, newTitle, newSlug);
-        scopeProps.updatePost(newTitle, newSlug);
+        scopeProps.updatePost(newTitle, newSlug, newUsedSlugs);
         scopeProps.cancelEdit();
       })
     }

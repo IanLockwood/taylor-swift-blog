@@ -1,7 +1,9 @@
+// Stateful parent class
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { StaticTitle } from './StaticTitle';
 import { TitleForm } from './TitleForm';
+
 
 class EditableTitle extends Component {
   constructor(props) {
@@ -20,23 +22,30 @@ class EditableTitle extends Component {
     this.updatePost = this.updatePost.bind(this);
   }
 
+  // Toggle for TitleForm component
   editTitle() {
     this.setState({
       editing: true
     });
   }
 
+  // Toggle back for StaticTitle component
   cancelEdit() {
     this.setState({
       editing: false
     });
   }
 
-  updatePost(newTitle, newSlug) {
-    this.setState({
-      postTitle: newTitle,
-      postSlug: newSlug
-    });
+  // New title, slug, and taken slugs pushed to state after database change
+  updatePost(newTitle, newSlug, newUsedSlugs) {
+    let oldSlug = this.state.postSlug;
+    if (newSlug !== oldSlug) {
+      this.setState({
+        postTitle: newTitle,
+        postSlug: newSlug,
+        usedSlugs: newUsedSlugs
+      });
+    }
   }
 
   render() {
